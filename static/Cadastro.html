@@ -8,67 +8,102 @@
         <div class="form">
             <form>
                 <div>
-                    <label for="email">E-mail</label>
-                    <label for="senha">Crie uma senha</label><br>
-
-                    <input class="form-control mr-5" type="email">
-                    <input class="form-control mr-5" type="password"><br>
-
-                    <label for="email">Repita o e-mail</label>
-                    <label for="senha">Repita a senha</label><br>
-
-                    <input type="email">
-                    <input  type="password">
+                    <table width="500px">
+                        <tr>
+                            <td>E-mail</td>
+                            <td>Crie uma senha</td>
+                        </tr>
+                        <tr>
+                            <td><input type="email" name="email"></td>
+                            <td><input type="password" name="senha"></td>
+                        </tr>
+                        <tr>
+                            <td>Repita o e-mail</td>
+                            <td>Repita a senha</td>
+                        </tr>
+                        <tr>
+                            <td><input type="email" name="email"></td>
+                            <td><input type="password" name="senha"></td>
+                        </tr>
+                    </table>
                 </div>
 
                 <h3><strong>Dados Cadastrais</strong></h3>
+
                 <div>
-                    <input type="radio" name="opcao" id="aluno">
-                    <label for="aluno">Aluno</label>
-                    <input type="radio" name="opcao" id="professor">
-                    <label for="professor">Professor</label>
-                    <input type="radio" name="opcao" id="coordenador">
-                    <label for="coordenador">Coordenador</label><br>            
+                    <table width="200px">
+                        <tr>
+                            <td><input type="radio" name="opcao" id="aluno"></td>
+                            <td>Aluno</td>
+                            <td><input type="radio" name="opcao" id="professor"></td>
+                            <td>Professor</td>
+                            <td><input type="radio" name="opcao" id="coordenador"></td>
+                            <td>Coordenador</td>
+                        </tr>
+                    </table>  
                 </div>
                 
                 <div>
-                    <label for="nome">Nome Completo</label>
-                    <label for="nome_instituicao">Nome da Instituição</label><br>
-                    <input type="text">
-                    <input type="text"><br>
+                    <table width="500px">
+                        <tr>
+                            <td>Nome Completo</td>
+                            <td>Nome da Instituição</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="nome"></td>
+                            <td><input type="text" name="nome_instituicao"></td>
+                        </tr>
+                    </table>
                 </div>
                 
                 <div>
-                    <label for="sexo">Sexo</label>
-                    <select name="sexo">
-                        <option value="fem">Feminino</option>
-                        <option value="masc">Masculino</option>
-                        <option value="outros">Outros</option>
-                    </select>
-                    <label for="uf">UF</label>
-                    <input type="text"><br>
+                    <table width="758px">
+                        <tr>
+                            <td>Sexo</td>
+                            <td>UF</td>
+                        </tr>
+                        <tr>
+                            <td><select name="sexo">
+                                <option value="fem">Feminino</option>
+                                <option value="masc">Masculino</option>
+                                <option value="outros">Outros</option>
+                            </select></td>
+                            <td><input type="text" name="uf"></td>
+                        </tr>
+                    </table>
                 </div>
                 
                 <div>
-                    <label for="cpf">CPF</label>
-                    <label for="municipio">Município</label><br>
-                    
-                    <input type="text">
-                    <input type="text"><br>
+                    <table width="500px">
+                        <tr>
+                            <td>CPF</td>
+                            <td>Município</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="cpf"></td>
+                            <td><input type="text" name="municipio"></td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div>
-                    <label for="celular">Celular</label>
-                    <input type="tel"><br>
-                </div>
-
-                <div>
-                    <label for="nascimento">Data de Nascimento</label>
-                    <input type="date"><br>
-                </div>
-
-                <div>
-                    <button>CADASTRAR</button>
+                    <table width="435px">
+                        <tr>
+                            <td>Celular</td>
+                        </tr>
+                        <tr>
+                            <td><input type="tel" name="celular"></td>
+                            <div>
+                                <td><input type="submit" value="CADASTRAR"></td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <td>Data de Nascimento</td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="data_nasc"></td>
+                        </tr>
+                    </table><br>
                 </div>
                 
             </form>
