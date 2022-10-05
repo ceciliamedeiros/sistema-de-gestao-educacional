@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cadastro</title>
-        <meta charset="utf-8">
-        <style>
-            .botao{
-                background-color: rgba(18, 76, 195, 1);
-                color: rgba(255, 255, 255, 1);
-                border: 0ch;
-                width: 150px;
-                height: 30px;
-                border-radius: 10px;
-            }
-            input{
-                border-width: 1px;
-                border-radius: 20px;
-                width: 70%;
-            }
-            select{
-                border-radius: 20px;
-                width: 175px;
-            }
-            table{
-                width: 70%;
-                text-align: left;
-            }
-            .input{
-                border-width: 1px;
-                border-radius: 20px;
-                width: 50px;
-            }
-            .inputdate{
-                border-width: 1px;
-                border-radius: 20px;
-                width: 150px;
-            }
-        </style>
-    </head>
-    <body>
+
+<head>
+    <title>Cadastro</title>
+    <link href="style-cadastro.css" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <div>
+        <div class="main_container" id="home">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="imgs/logo.png" width="250px">
+                </div>
+                <div class="navbar_items">
+                    <ul>
+                        <li><a href="index.html">home </a></li>
+                        <li><a href="">Cadastro</a></li>
+                        <li><a href="">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> <br><br><br><br><br><br><br>
+
         <div class="form">
             <form>
                 <div>
@@ -61,17 +48,17 @@
                     </table>
                 </div>
 
-                <h3><strong>Dados Cadastrais</strong></h3>
+                <br><h3 style="margin-left: 20%;"><strong>Dados Cadastrais</strong></h3><br>
 
-                <div>
-                            <input class="input" type="radio" name="opcao" id="aluno">
-                            Aluno</td>
-                            <input class="input" type="radio" name="opcao" id="professor">
-                            Professor</td>
-                            <input class="input" type="radio" name="opcao" id="coordenador">
-                            Coordenador
-                </div>
-                
+                <div style="margin-left: 19%;">
+                    <input class="input" type="radio" name="opcao" id="aluno">
+                    Aluno</td>
+                    <input class="input" type="radio" name="opcao" id="professor">
+                    Professor</td>
+                    <input class="input" type="radio" name="opcao" id="coordenador">
+                    Coordenador
+                </div><br>
+
                 <div>
                     <table width="500px">
                         <tr>
@@ -84,7 +71,7 @@
                         </tr>
                     </table>
                 </div>
-                
+
                 <div>
                     <table width="560px">
                         <tr>
@@ -93,15 +80,15 @@
                         </tr>
                         <tr>
                             <td><select name="sexo">
-                                <option value="fem">Feminino</option>
-                                <option value="masc">Masculino</option>
-                                <option value="outros">Outros</option>
-                            </select></td>
+                                    <option value="fem">Feminino</option>
+                                    <option value="masc">Masculino</option>
+                                    <option value="outros">Outros</option>
+                                </select></td>
                             <td><input type="text" name="uf"></td>
                         </tr>
                     </table>
                 </div>
-                
+
                 <div>
                     <table width="500px">
                         <tr>
@@ -116,7 +103,7 @@
                 </div>
 
                 <div>
-                    <table >
+                    <table>
                         <tr>
                             <td>Celular</td>
                         </tr>
@@ -134,9 +121,12 @@
                         </tr>
                     </table><br>
                 </div>
-                
+
             </form>
         </div>
-        
-    </body>
+    </div>
+
+
+</body>
+
 </html>
