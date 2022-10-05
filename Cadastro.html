@@ -3,6 +3,39 @@
     <head>
         <title>Cadastro</title>
         <meta charset="utf-8">
+        <style>
+            .botao{
+                background-color: rgba(18, 76, 195, 1);
+                color: rgba(255, 255, 255, 1);
+                border: 0ch;
+                width: 150px;
+                height: 30px;
+                border-radius: 10px;
+            }
+            input{
+                border-width: 1px;
+                border-radius: 20px;
+                width: 70%;
+            }
+            select{
+                border-radius: 20px;
+                width: 175px;
+            }
+            table{
+                width: 70%;
+                text-align: left;
+            }
+            .input{
+                border-width: 1px;
+                border-radius: 20px;
+                width: 50px;
+            }
+            .inputdate{
+                border-width: 1px;
+                border-radius: 20px;
+                width: 150px;
+            }
+        </style>
     </head>
     <body>
         <div class="form">
@@ -31,16 +64,12 @@
                 <h3><strong>Dados Cadastrais</strong></h3>
 
                 <div>
-                    <table width="200px">
-                        <tr>
-                            <td><input type="radio" name="opcao" id="aluno"></td>
-                            <td>Aluno</td>
-                            <td><input type="radio" name="opcao" id="professor"></td>
-                            <td>Professor</td>
-                            <td><input type="radio" name="opcao" id="coordenador"></td>
-                            <td>Coordenador</td>
-                        </tr>
-                    </table>  
+                            <input class="input" type="radio" name="opcao" id="aluno">
+                            Aluno</td>
+                            <input class="input" type="radio" name="opcao" id="professor">
+                            Professor</td>
+                            <input class="input" type="radio" name="opcao" id="coordenador">
+                            Coordenador
                 </div>
                 
                 <div>
@@ -57,7 +86,7 @@
                 </div>
                 
                 <div>
-                    <table width="758px">
+                    <table width="560px">
                         <tr>
                             <td>Sexo</td>
                             <td>UF</td>
@@ -87,21 +116,21 @@
                 </div>
 
                 <div>
-                    <table width="435px">
+                    <table >
                         <tr>
                             <td>Celular</td>
                         </tr>
                         <tr>
                             <td><input type="tel" name="celular"></td>
-                            <div>
-                                <td><input type="submit" value="CADASTRAR"></td>
-                            </div>
                         </tr>
                         <tr>
                             <td>Data de Nascimento</td>
+                            <div>
+                                <td><input class="botao" type="submit" value="CADASTRAR"></td>
+                            </div>
                         </tr>
                         <tr>
-                            <td><input type="date" name="data_nasc"></td>
+                            <td><input class="inputdate" type="date" name="data_nasc"></td>
                         </tr>
                     </table><br>
                 </div>
