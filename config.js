@@ -5,9 +5,10 @@ const config = {
     db: {
       host: 'localhost',
       port: 3306,
-      database: 'mysql-db',
+      name: 'sistema-educacional',
       password: 'mypassword',
-      user: 'root'
+      user: 'root',
+      database: 'mysql'
     }
    };
    
