@@ -1,35 +1,24 @@
-const Sequelize = require('sequelize');
-const database = require('../mysql-db');
-const Disciplina = require('./disciplina');
+module.exports = (sequelize, DataTypes) => {
+    const Professor = sequelize.define('Professores', {
+        nome: DataTypes.STRING,
+        cpf:DataTypes.STRING,
+        email: DataTypes.STRING,
+        senha: DataTypes.STRING
+    });
 
-const Professor = database.define('professor',{
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
-    nome: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    cpf: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    senha: {
-        type: Sequelize.STRING,
-        allowNull: false
+    Professor.associate = (models) => {
+        Professor.belongsToMany(models.Aluno, {
+            through: 'professorAluno',
+            as: 'alunos',
+            foreignKey: 'ProfessorId'
+        });
     }
 
-})
+    Professor.associate = (models) => {
+        Professor.hasMany(models.Disciplina, {
+            foreignKey: 'ProfessorId'
+        });
+    };
 
-Professor.hasMany(Disciplina, {
-    foreignKey: 'idProfessor'
-})
-
-module.exports = Professor;
+    return Professor;
+};

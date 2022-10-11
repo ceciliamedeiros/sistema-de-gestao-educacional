@@ -1,23 +1,23 @@
-const Sequelize = require('sequelize');
-const database = require('../mysql-db');
+module.exports = (sequelize, DataTypes) => {
+    const Disciplina = sequelize.define('Disciplinas', {
+        nome: DataTypes.STRING,
+        nota: DataTypes.DECIMAL,
+        faltas: DataTypes.INTEGER
+    });
 
-const Disciplina = database.define('disciplina',{
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
-    nome: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    nota: {
-        type: Sequelize.DECIMAL
-    },
-    faltas: {
-        type: Sequelize.INTEGER
-    }
-})
+    Disciplina.associate = (models) => {
+        Disciplina.belongsToMany(models.Aluno, {
+            through: 'alunoDisciplina',
+            as: 'alunos',
+            foreignKey: 'DisciplinaId'
+        });
+    };
 
-module.exports = Disciplina;
+    Disciplina.associate = (models) => {
+        Disciplina.belongsTo(models.Professor, {
+            foreignKey: 'DisciplinaId'
+        });
+    };
+
+    return Aluno;
+};
