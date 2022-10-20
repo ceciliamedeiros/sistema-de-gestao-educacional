@@ -59,13 +59,19 @@ export default function Cadastro() {
                     <ul>
                         <li><Link href={"/"}><a>home  </a></Link></li>
                         <li><Link href={"/confirma-usuario"}><a>Cadastro</a></Link></li>
-                        <li><a href="">Contato</a></li>
                     </ul>
                 </div>
             </div>
   
-            <div className={styles.banner_image}>
+            <div className={styles.banner_image2}>
                 <div>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
                     <div className={styles.form}>
                       <form onSubmit={handleSignUp}>
                       <br></br>

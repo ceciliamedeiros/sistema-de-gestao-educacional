@@ -55,27 +55,31 @@ export default function Home() {
                 <div className={styles.listra2}>
                     <div id="form">
                       <form onSubmit={handleLogin}>
+                        <div className={styles.input1}>
                         <Input
                         placeholder="Digite seu e-mail"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}/>
+                         </div>
+                         <div className= {styles.input2}>
                         <Input
                         placeholder="Digite sua senha"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
-                          <br></br>
-                          <br></br>
+                        <div className={styles.acessar}>
                         <Button
                         type="submit"
                         >
                           Acessar
                         </Button>
-                      </form>
+                        </div>
+                          <br></br>
+                          <br></br>
+                          </div>
+                  
+                  </form>
 
-                      <Link href="/cadastro">
-                      <a className={styles.text}>Cadastre-se</a>
-                      </Link>
                     </div>
                 </div>
             </div>
