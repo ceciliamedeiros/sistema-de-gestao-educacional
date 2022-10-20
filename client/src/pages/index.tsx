@@ -39,7 +39,7 @@ export default function Home() {
                 <div className={styles.navbar_items}>
                     <ul>
                         <li><Link href={"/"}><a>home  </a></Link></li>
-                        <li><Link href={"/cadastro"}><a>Cadastro</a></Link></li>
+                        <li><Link href={"/confirma-usuario"}><a>Cadastro</a></Link></li>
                         <li><a href="">Contato</a></li>
                     </ul>
                 </div>
