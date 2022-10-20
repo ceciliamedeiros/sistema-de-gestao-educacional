@@ -16,31 +16,21 @@ export default function Cadastro() {
   const [email, setEmail]= useState('')
   const [senha, setSenha]= useState('')
   const [cpf, setCPF]= useState('')
-  const [celular, setCelular]= useState('')
-  const [instituicao, setInstituicao]= useState('')
-  const [municipio, setMunicipio]= useState('')
-  const [dataNasc, setDataNasc]= useState('')
-  const [sexo, setSexo]= useState('')
+  
 
   async function handleSignUp(event: FormEvent){
     event.preventDefault();
 
-    if(nome === '' || email == '' || senha === '' || cpf === '' || celular === ''
-    || instituicao === '' || municipio === '' || dataNasc === '' || sexo === ''){
+    if(nome === '' || email == '' || senha === '' || cpf === ''){
       alert("PREENCHA TODOS OS CAMPOS")
       return
     }
 
     let data = {
       nome, 
+      cpf,
       email,
-      senha,
-      cpf, 
-      celular,
-      instituicao,
-      municipio,
-      dataNasc,
-      sexo
+      senha, 
     }
     await signUp(data)
   }
@@ -94,11 +84,6 @@ export default function Cadastro() {
                         value={senha}
                         onChange={(e) => setSenha(e.target.value)}/>
                         <Input
-                        placeholder="Nome da Instituição"
-                        type="text"
-                        value={instituicao}
-                        onChange={(e) => setInstituicao(e.target.value)}/>
-                        <Input
                         placeholder="CPF"
                         type="text"
                         value={cpf}
@@ -114,26 +99,6 @@ export default function Cadastro() {
                       <br></br>
                        <br></br>
                         <br></br>
-                        <Input
-                        placeholder="Celular"
-                        type="text"
-                        value={celular}
-                        onChange={(e) => setCelular(e.target.value)}/>
-                         <Input
-                        placeholder="Município"
-                        type="text"
-                        value={municipio}
-                        onChange={(e) => setMunicipio(e.target.value)}/>
-                         <Input
-                        placeholder="Data de Nascimento"
-                        type="text"
-                        value={dataNasc}
-                        onChange={(e) => setDataNasc(e.target.value)}/>
-                        <Input
-                        placeholder="Sexo"
-                        type="text"
-                        value={sexo}
-                        onChange={(e) => setSexo(e.target.value)}/>
                          <br></br>
                        <br></br>
                          <Button 

@@ -25,14 +25,9 @@ type  AuthProviderProps= {
 
 type SignUpProps = {
     nome: string,
+    cpf: string,
     email: string,
     senha: string,
-    instituicao: string, 
-    cpf: string,
-    celular: string,
-    municipio: string,
-    dataNasc: string,
-    sexo: string,
 }
 
 export const AuthContext = createContext({} as AuthContextData)
@@ -52,10 +47,10 @@ export function AuthProvider({children}: AuthProviderProps){
        }
     }
 
-    async function signUp({nome, email, senha, cpf, celular, instituicao, municipio, dataNasc, sexo}: SignUpProps){
+    async function signUp({nome, cpf, email, senha}: SignUpProps){
         try{
-            const response = await api.post('/cadastro', {
-                nome, email, senha, cpf, celular, instituicao, municipio, dataNasc, sexo
+            const response = await api.post('/alunos', {
+                nome, cpf, email, senha
             })
 
             console.log("CADASTRADO COM SUCESSO")

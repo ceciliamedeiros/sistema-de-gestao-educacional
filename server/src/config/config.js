@@ -2,7 +2,7 @@
 module.exports = 
 {
     username: 'root',
-    password: 'mypassword',
+    password: '030460',
     database: 'sistema-educacional',
     host: 'localhost',
     port: '3306',
