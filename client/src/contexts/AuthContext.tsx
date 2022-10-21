@@ -13,9 +13,10 @@ type SignInProps ={
     password: string;
 }
 
+
 type UserProps={
     id: string;
-    name: string;
+    nome: string;
     email: string;
 }
 
@@ -36,17 +37,28 @@ type SignUpProps = {
 }
 
 export const AuthContext = createContext({} as AuthContextData)
+export var usuario
 
 export function AuthProvider({children}: AuthProviderProps){
-    const [user, setUser] = useState<UserProps>()
 
+    const [user, setUser] = useState<UserProps>()
+    var flag = true
     async function signIn({email, password} : SignInProps){
        try{
-        const response = await api.post('/login', {
-            email, password
-        })
-
-        console.log(response.data)
+        const response = await api.get('/alunos')
+        for(var i = 0; i<response.data.length; i++){
+            if((response.data[i].email == email) && (response.data[i].senha == password)){
+                usuario = response.data[i]
+                Router.push('/portal-aluno')
+                flag = true
+                break
+            }else{
+                flag = false
+            }
+        }
+        if(flag == false){
+            alert("VOCÊ NÃO ESTÁ CADASTRADO!")
+        }
        }catch(err){
         console.log("Erro:", err)
        }
@@ -57,6 +69,7 @@ export function AuthProvider({children}: AuthProviderProps){
             const response = await api.post('/cadastro', {
                 nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo
             })
+
 
             console.log("CADASTRADO COM SUCESSO")
 

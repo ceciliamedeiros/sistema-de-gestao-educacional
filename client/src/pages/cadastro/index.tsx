@@ -65,6 +65,7 @@ export default function Cadastro() {
   
             <div className={styles.banner_image2}>
                 <div>
+                <br></br>
                   <br></br>
                   <br></br>
                   <br></br>

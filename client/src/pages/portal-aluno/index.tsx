@@ -4,10 +4,11 @@ import logo from '../../../public/logo.png'
 import styles from '../../../styles/home.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import {usuario} from '../../contexts/AuthContext'
+
 
 
 export default function PortalAluno() {
- 
   return (
     <>
     <Head>
@@ -29,9 +30,8 @@ export default function PortalAluno() {
                     </div>
                     
               <div className={styles.listra3}>
-                Nome:
-                Órgão:
-                Perfil:Discente
+                Nome:{usuario.nome} &emsp;
+                Órgão:{usuario.email} &emsp;
               </div>
             </div>
 
@@ -106,7 +106,7 @@ export default function PortalAluno() {
               <article className={styles.card2}>
               <header className={styles.cardThumb}>
                       <a href="#">
-                          <img src="https://unsplash.it/370/235/?random"/>
+                          <img src="https://picsum.photos/536/354"/>
                       </a>
                   </header>
                   <div className={styles.cardDate}>
