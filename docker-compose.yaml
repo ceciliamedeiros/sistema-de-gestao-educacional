@@ -6,10 +6,10 @@ services:
     container_name: mysql_container
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 030460
+      MYSQL_ROOT_PASSWORD: mypassword
       MYSQL_DATABASE: sistema-educacional  
     ports:
-      - "4000:4000"
+      - "3306:3306"
     volumes:
       - my-vol:/var/lib/mysql
   adminer:
