@@ -23,7 +23,7 @@ export default function PortalAluno() {
                     <div className={styles.navbar_items}>
                         <ul>
                             <li><Link href={"/"}><a>home  </a></Link></li>
-                            <li><Link href={"/confirma-usuario"}><a>Notas</a></Link></li>
+                            <li><Link href={"/confirma-usuario"}><a>Disciplinas</a></Link></li>
                         </ul>
                     </div>
                     
@@ -113,7 +113,7 @@ export default function PortalAluno() {
                   </div>
                   <div className={styles.cardBody}>
                   <div className={styles.cardCategory}><a href="#">Atalhos</a></div>
-                      <h2 className={styles.cardTitle2}><a href="#">Notas</a></h2>
+                      <h2 className={styles.cardTitle2}><a href="#">Disciplinas</a></h2>
                       <p className={styles.cardDescription}>
                           In ut quam quis magna pulvinar tempor at non elit. Ut lacinia elit vestibulum nulla accumsan, et fringilla mi accumsan. Etiam urna justo, luctus non porta eget, interdum quis tellus.
                       </p>

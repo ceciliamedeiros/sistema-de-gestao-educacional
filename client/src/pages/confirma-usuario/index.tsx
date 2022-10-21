@@ -47,7 +47,11 @@ export default function ConfirmaUsuario() {
                         </Link>
                         </div>
                         <div className={styles.professor}>
-                            <input className={styles.botao} type="submit" value="PROFESSOR" name="professor"/>
+                        <Link href={"/cadastro-prof"}>
+                            <a>
+                                <input className={styles.botao} type="submit" value="PROFESSOR" name="professor"/>
+                            </a>
+                        </Link>
                         </div>
                     </form>
                     

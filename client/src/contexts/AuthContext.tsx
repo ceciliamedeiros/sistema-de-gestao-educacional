@@ -6,6 +6,7 @@ type AuthContextData = {
     user: UserProps;
     signIn: (credentials: SignInProps) => Promise<void>;
     signUp: (credentials: SignUpProps) => Promise<void>;
+    signUpProfessor: (credentials: SignUpProfProps) => Promise<void>;
 }
 
 type SignInProps ={
@@ -25,6 +26,18 @@ type  AuthProviderProps= {
 }
 
 type SignUpProps = {
+    nome: string,
+    cpf: string,
+    email: string,
+    senha: string,
+    instituicao: string, 
+    celular: string,
+    municipio: string,
+    dataNasc: string,
+    sexo: string,
+}
+
+type SignUpProfProps = {
     nome: string,
     cpf: string,
     email: string,
@@ -56,6 +69,19 @@ export function AuthProvider({children}: AuthProviderProps){
                 flag = false
             }
         }
+        if (!flag){
+            const responseprof = await api.get('/professores')
+            for(var i = 0; i<responseprof.data.length; i++){
+            if((responseprof.data[i].email == email) && (responseprof.data[i].senha == password)){
+                usuario = responseprof.data[i]
+                Router.push('/portal-professor')
+                flag = true
+                break
+            }else{
+                flag = false
+            }
+        }
+        }
         if(flag == false){
             alert("VOCÊ NÃO ESTÁ CADASTRADO!")
         }
@@ -66,7 +92,7 @@ export function AuthProvider({children}: AuthProviderProps){
 
     async function signUp({nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo}: SignUpProps){
         try{
-            const response = await api.post('/cadastro', {
+            const response = await api.post('/alunos', {
                 nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo
             })
 
@@ -78,8 +104,24 @@ export function AuthProvider({children}: AuthProviderProps){
             console.log("ERRO:", err)
         }
     }
+
+    async function signUpProfessor({nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo}: SignUpProps){
+        try{
+            const response = await api.post('/professores', {
+                nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo
+            })
+
+
+            console.log("CADASTRADO COM SUCESSO")
+
+            Router.push('/')
+        }catch(err){
+            console.log("ERRO:", err)
+        }
+    }
+
     return(
-        <AuthContext.Provider value={{user, signIn, signUp}}>
+        <AuthContext.Provider value={{user, signIn, signUp, signUpProfessor}}>
             {children}
         </AuthContext.Provider>
     )
