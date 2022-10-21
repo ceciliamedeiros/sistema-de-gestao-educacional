@@ -17,16 +17,16 @@ export default function Cadastro() {
   const [senha, setSenha]= useState('')
   const [cpf, setCPF]= useState('')
   const [celular, setCelular]= useState('')
-  const [instituicao, setInstituicao]= useState('')
+  const [nomeInstituicao, setnomeInstituicao]= useState('')
   const [municipio, setMunicipio]= useState('')
-  const [dataNasc, setDataNasc]= useState('')
+  const [dataDeNascimento, setdataDeNascimento]= useState('')
   const [sexo, setSexo]= useState('')
 
   async function handleSignUp(event: FormEvent){
     event.preventDefault();
 
     if(nome === '' || email == '' || senha === '' || cpf === '' || celular === ''
-    || instituicao === '' || municipio === '' || dataNasc === '' || sexo === ''){
+    || nomeInstituicao === '' || municipio === '' || dataDeNascimento === '' || sexo === ''){
       alert("PREENCHA TODOS OS CAMPOS")
       return
     }
@@ -36,10 +36,10 @@ export default function Cadastro() {
       cpf,
       email,
       senha, 
-      instituicao,
+      nomeInstituicao,
       celular,
       municipio,
-      dataNasc,
+      dataDeNascimento,
       sexo
     }
     await signUp(data)
@@ -103,8 +103,8 @@ export default function Cadastro() {
                         <Input
                         placeholder="Nome da Instituição"
                         type="text"
-                        value={instituicao}
-                        onChange={(e) => setInstituicao(e.target.value)}/>
+                        value={nomeInstituicao}
+                        onChange={(e) => setnomeInstituicao(e.target.value)}/>
                         <Input
                         placeholder="CPF"
                         type="text"
@@ -134,8 +134,8 @@ export default function Cadastro() {
                          <Input
                         placeholder="Data de Nascimento"
                         type="text"
-                        value={dataNasc}
-                        onChange={(e) => setDataNasc(e.target.value)}/>
+                        value={dataDeNascimento}
+                        onChange={(e) => setdataDeNascimento(e.target.value)}/>
                         <Input
                         placeholder="Sexo"
                         type="text"

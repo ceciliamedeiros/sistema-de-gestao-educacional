@@ -1,3 +1,4 @@
+const Aluno = require('../models/aluno');
 const Disciplina = require('../models/disciplina');
 const Professor = require('../models/professor');
 
@@ -5,10 +6,8 @@ module.exports = {
 
     async obterDisciplinas(req, res){
         const disciplinas = await Disciplina.findAll();
-
         return res.json(disciplinas);
-    }
-    ,
+    },
     async criarDisciplina(req, res) {
         const {professor_id} = req.params;
         const { nome, nota, faltas } = req.body;

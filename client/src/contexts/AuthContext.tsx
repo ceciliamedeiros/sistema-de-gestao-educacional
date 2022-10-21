@@ -30,10 +30,10 @@ type SignUpProps = {
     cpf: string,
     email: string,
     senha: string,
-    instituicao: string, 
+    nomeInstituicao: string, 
     celular: string,
     municipio: string,
-    dataNasc: string,
+    dataDeNascimento: string,
     sexo: string,
 }
 
@@ -42,10 +42,10 @@ type SignUpProfProps = {
     cpf: string,
     email: string,
     senha: string,
-    instituicao: string, 
+    nomeInstituicao: string, 
     celular: string,
     municipio: string,
-    dataNasc: string,
+    dataDeNascimento: string,
     sexo: string,
 }
 
@@ -90,10 +90,10 @@ export function AuthProvider({children}: AuthProviderProps){
        }
     }
 
-    async function signUp({nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo}: SignUpProps){
+    async function signUp({nome, cpf, email, senha, nomeInstituicao, celular, municipio, dataDeNascimento, sexo}: SignUpProps){
         try{
             const response = await api.post('/alunos', {
-                nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo
+                nome, cpf, email, senha, nomeInstituicao, celular, municipio, dataDeNascimento, sexo
             })
 
 
@@ -105,10 +105,10 @@ export function AuthProvider({children}: AuthProviderProps){
         }
     }
 
-    async function signUpProfessor({nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo}: SignUpProps){
+    async function signUpProfessor({nome, cpf, email, senha, nomeInstituicao, celular, municipio, dataDeNascimento, sexo}: SignUpProps){
         try{
             const response = await api.post('/professores', {
-                nome, cpf, email, senha, instituicao, celular, municipio, dataNasc, sexo
+                nome, cpf, email, senha, nomeInstituicao, celular, municipio, dataDeNascimento, sexo
             })
 
 

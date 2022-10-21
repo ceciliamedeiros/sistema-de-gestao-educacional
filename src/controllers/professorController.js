@@ -9,9 +9,9 @@ module.exports = {
     ,
     async criarProf(req, res) {
         console.log(req.body)
-        const { nome, cpf, email, senha } = req.body;
+        const { nome, cpf, email, senha, nomeInstituicao, celular, municipio, dataDeNascimento, sexo } = req.body;
 
-        const professor = await Professor.create({ nome, cpf, email, senha})
+        const professor = await Professor.create({ nome, cpf, email, senha, nomeInstituicao, celular, municipio, dataDeNascimento, sexo})
 
         return res.json(professor);
     }
