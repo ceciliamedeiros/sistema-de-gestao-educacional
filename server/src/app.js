@@ -22,4 +22,4 @@ app.use(function (req, res, next) {
 app.use(express.json());
 app.use(routes);
 app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(5000, () => console.log(`Example app listening on port 5000!`))
+app.listen( process.env.PORT || 5000, () => console.log(`Example app listening on port 5000!`))

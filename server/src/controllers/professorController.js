@@ -1,8 +1,8 @@
-const Aluno = require('../models/professor');
+const Professor = require('../models/professor');
 
 module.exports = {
     async obterProfessores(req, res){
-        const professores = await Aluno.findAll();
+        const professores = await Professor.findAll();
 
         return res.json(professores);
     }
@@ -11,7 +11,7 @@ module.exports = {
         console.log(req.body)
         const { nome, cpf, email, senha } = req.body;
 
-        const professor = await Aluno.create({ nome, cpf, email, senha})
+        const professor = await Professor.create({ nome, cpf, email, senha})
 
         return res.json(professor);
     }

@@ -12,7 +12,5 @@ Professor.init(sequelize);
 Disciplina.init(sequelize);
 Disciplina.associate(sequelize.models);
 Professor.associate(sequelize.models);
-Disciplina.belongsTo(Professor);
-Professor.hasMany(Disciplina);
 
 module.exports = sequelize;
