@@ -6,7 +6,12 @@ class Aluno extends Model {
             nome: DataTypes.STRING,
             cpf:DataTypes.STRING,
             email: DataTypes.STRING,
-            senha: DataTypes.STRING
+            senha: DataTypes.STRING,
+            nomeInstituicao: DataTypes.STRING,
+            celular: DataTypes.STRING,
+            municipio: DataTypes.STRING,
+            dataDeNascimento: DataTypes.STRING,
+            sexo: DataTypes.STRING
         }, {
             sequelize
         })
